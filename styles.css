@@ -1,0 +1,99 @@
+
+body {
+    font-family: Arial, sans-serif;
+    width: 220px;
+    padding: 20px;
+    padding-top: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #f1f1f1;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+.footer {
+    margin-top: 20vw;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    
+}
+.command{
+    padding: 5px;
+    border-radius: 5px;
+    background: rgb(255, 199, 80);
+    font-size: 17px;
+    color: azure;
+    text-shadow: 0 0 3px black;
+    font-weight: bold;
+}
+.threshold{
+    margin-top: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 4px;
+}
+.threshold label{
+    font-size: 13px;
+    font-weight: bold;
+    color: #333;
+}
+.threshold input{
+    width: 80px;
+    padding: 4px 6px;
+    text-align: center;
+    border: 1px solid rgb(255, 199, 80);
+    border-radius: 5px;
+    font-size: 14px;
+}
+.threshold input::placeholder{
+    color: #999;
+    opacity: 0.6;
+}
+.threshold .hint{
+    font-size: 11px;
+    color: #666;
+    opacity: 0.7;
+    text-align: center;
+}
+.seiagif{
+    width: 100vw;
+    position: absolute;
+    top:0;
+    z-index: -1;
+}
+.profile {
+    display: flex;
+    align-items: center;
+}
+.profile img {
+    width: 50px;
+    height: 50px;
+    margin-right: 5px;
+}
+.icons{
+    margin-top: 10px;
+}
+.icons a {
+    margin: 5px;
+    text-decoration: none;
+}
+.icons img {
+    height: 40px;
+}
+
+header {
+    color: #f1f1f1;
+    font-size: 36px; /* Makes the text larger */
+    font-weight: bold; /* Makes the text bold */
+    margin-bottom: 10px;
+    -webkit-text-stroke: 2px rgb(255, 199, 80);
+    paint-order: stroke fill;
+}

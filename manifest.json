@@ -1,0 +1,43 @@
+{
+  "manifest_version": 3,
+  "name": "SeiaSinger",
+  "version": "1.0.0",
+  "description": "Captures the active tab's audio and monitors its volume level in real time.",
+  "permissions": [
+    "tabCapture",
+    "activeTab",
+    "offscreen",
+    "storage"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "48": "icons/26.png"
+    }
+  },
+  "commands": {
+    "seia-listen": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+S",
+        "mac": "Command+Shift+S"
+      },
+      "description": "Let Seia listen in"
+    }
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["frames/*.png"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}
