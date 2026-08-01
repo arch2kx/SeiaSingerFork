@@ -20,7 +20,7 @@ https://github.com/chikenuwu/SeiaSinger
 How to setup:
 
 If you want it locally, here are the steps to get the extension as a .zip
-- Download the `SechifyTS.zip` from here.
+- Download from `seiasinger_fork-1.x.x.zip` from here.
 - Go to `about:addons` on Firefox-based, `chrome://extensions` on Chromium-based.
 - Drag the .zip file to the extensions place.
 
