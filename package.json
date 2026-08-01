@@ -1,0 +1,23 @@
+{
+  "name": "seiasingerfork",
+  "version": "1.0.0",
+  "main": "background.js",
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc --watch",
+    "lint": "web-ext lint",
+    "zip": "npm run build && web-ext build --overwrite-dest --artifacts-dir=."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "types": "./background.d.ts",
+  "description": "",
+  "devDependencies": {
+    "@types/chrome": "^0.2.2",
+    "@types/node": "^26.1.1",
+    "typescript": "^7.0.2",
+    "web-ext": "^8.3.0",
+    "web-ext-types": "^3.2.1"
+  }
+}

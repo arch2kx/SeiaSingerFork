@@ -1,0 +1,12 @@
+*.ts
+*.d.ts
+*.d.ts.map
+*.js.map
+node_modules
+.git
+package.json
+package-lock.json
+tsconfig.json
+install.log
+*.gif
+web-ext-artifacts

@@ -46,9 +46,12 @@
     }
   ],
   "browser_specific_settings": {
-  "gecko": {
-    "id": "seiasinger@help.me",
-    "strict_min_version": "109.0"
+    "gecko": {
+      "id": "seiasinger@help.me",
+      "strict_min_version": "109.0",
+      "data_collection_permissions": {
+        "required": ["none"]
+      }
+    }
   }
-}
 }

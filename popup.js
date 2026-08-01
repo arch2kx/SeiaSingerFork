@@ -29,5 +29,14 @@
             chrome.storage.local.set({ thresholdDb: value });
         }
     });
+    // Seia visibility toggle: defaults to on so existing users see no change
+    const seiaToggle = document.getElementById("seiaToggle");
+    chrome.storage.local.get({ seiaEnabled: true }, ({ seiaEnabled }) => {
+        if (seiaToggle)
+            seiaToggle.checked = seiaEnabled;
+    });
+    seiaToggle?.addEventListener("change", () => {
+        chrome.storage.local.set({ seiaEnabled: seiaToggle.checked });
+    });
 })();
 //# sourceMappingURL=popup.js.map

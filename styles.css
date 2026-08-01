@@ -16,7 +16,7 @@ button:hover {
 }
 
 .footer {
-    margin-top: 20vw;
+    margin-top: 14px;
     display: flex;
     justify-content: space-between;
     width: 100%;
@@ -128,4 +128,63 @@ header {
     margin-bottom: 10px;
     -webkit-text-stroke: 2px rgb(255, 199, 80);
     paint-order: stroke fill;
+}
+
+.toggle-row {
+    margin-top: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.toggle-label {
+    font-size: 15px;
+    font-weight: 500;
+    color: #333;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 43px;
+    height: 26px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.switch .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    border-radius: 22px;
+    transition: background-color 0.15s ease;
+}
+
+.switch .slider::before {
+    position: absolute;
+    content: "";
+    height: 20px;
+    width: 20px;
+    left: 3px;
+    bottom: 3px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    transition: transform 0.15s ease;
+}
+
+.switch input:checked + .slider {
+    background-color: rgb(255, 199, 80);
+}
+
+.switch input:checked + .slider::before {
+    transform: translateX(16px);
 }
