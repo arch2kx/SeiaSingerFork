@@ -1,13 +1,17 @@
 {
   "manifest_version": 3,
-  "name": "SeiaSinger",
+  "name": "SeiaSinger Fork",
+  "icons": {
+    "128": "icons/icon-128.png"
+  },
   "version": "1.0.0",
-  "description": "Captures the active tab's audio and monitors its volume level in real time.",
+  "description": "Capture the active tab's audio and monitors its volume level in real time.",
   "permissions": [
-    "tabCapture",
     "activeTab",
-    "offscreen",
-    "storage"
+    "storage",
+    "tabs",
+    "tabCapture",
+    "offscreen"
   ],
   "action": {
     "default_popup": "popup.html",
@@ -18,14 +22,15 @@
   "commands": {
     "seia-listen": {
       "suggested_key": {
-        "default": "Ctrl+Shift+S",
-        "mac": "Command+Shift+S"
+        "default": "Ctrl+Shift+L",
+        "mac": "Command+Shift+L"
       },
       "description": "Let Seia listen in"
     }
   },
   "background": {
-    "service_worker": "background.js"
+      "service_worker": "background.js",
+      "scripts": ["background.js"]
   },
   "content_scripts": [
     {
@@ -39,5 +44,11 @@
       "resources": ["frames/*.png"],
       "matches": ["<all_urls>"]
     }
-  ]
+  ],
+  "browser_specific_settings": {
+  "gecko": {
+    "id": "seiasinger@help.me",
+    "strict_min_version": "109.0"
+  }
+}
 }

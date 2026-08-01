@@ -1,6 +1,6 @@
-
 body {
-    font-family: Arial, sans-serif;
+    font-family: Noto Sans, sans-serif;
+    font-size: 0.8rem;
     width: 220px;
     padding: 20px;
     padding-top: 10px;
@@ -14,6 +14,7 @@ body {
 button:hover {
     background-color: #45a049;
 }
+
 .footer {
     margin-top: 20vw;
     display: flex;
@@ -23,16 +24,18 @@ button:hover {
     justify-content: center;
     
 }
-.command{
+
+.command {
     padding: 5px;
-    border-radius: 5px;
+    border-radius: 8px;
     background: rgb(255, 199, 80);
     font-size: 17px;
     color: azure;
     text-shadow: 0 0 3px black;
     font-weight: bold;
 }
-.threshold{
+
+.threshold {
     margin-top: 12px;
     display: flex;
     flex-direction: column;
@@ -40,12 +43,14 @@ button:hover {
     width: 100%;
     gap: 4px;
 }
-.threshold label{
+
+.threshold label {
     font-size: 13px;
     font-weight: bold;
     color: #333;
 }
-.threshold input{
+
+.threshold input {
     width: 80px;
     padding: 4px 6px;
     text-align: center;
@@ -53,40 +58,67 @@ button:hover {
     border-radius: 5px;
     font-size: 14px;
 }
-.threshold input::placeholder{
+
+.threshold input::placeholder {
     color: #999;
     opacity: 0.6;
 }
-.threshold .hint{
+
+.threshold .hint {
     font-size: 11px;
     color: #666;
     opacity: 0.7;
     text-align: center;
 }
-.seiagif{
-    width: 100vw;
+
+#thresholdInput {
+    font-family: "Noto Sans", sans-serif;
+    border: 0.12rem solid rgb(233 167 71);
+    border-radius: 8px;
+    padding: 8px 5px;
+    font-size: 16px;
+    text-align: center;
+    background: #ffffff;
+    color: #181818;
+}
+
+.seiagif {
+    width: 110vw;
     position: absolute;
     top:0;
     z-index: -1;
 }
+
 .profile {
     display: flex;
     align-items: center;
 }
+
 .profile img {
     width: 50px;
     height: 50px;
     margin-right: 5px;
+    border-radius: 5px;
 }
+
 .icons{
     margin-top: 10px;
 }
+
 .icons a {
     margin: 5px;
     text-decoration: none;
 }
+
 .icons img {
     height: 40px;
+}
+
+.logo-banner {
+    width: 200px;
+    height: auto;
+    padding-bottom: 15px;
+    object-fit: cover;
 }
 
 header {
