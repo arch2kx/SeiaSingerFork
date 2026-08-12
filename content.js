@@ -122,6 +122,26 @@
             }
         });
     }
+    // Apply the user's saved overlay width; height stays "auto" so the aspect ratio is preserved.
+    function applySize(img, size) {
+        img.style.width = `${size}px`;
+    }
+    // Load the user's saved size preference and keep it in sync live,
+    // so resizing in the popup takes effect immediately without a page reload.
+    // 250 matches SEIA_SIZES[DEFAULT_SIZE_INDEX] in popup.ts — keep them in sync if either changes.
+    function loadSize(img) {
+        chrome.storage.local.get({ seiaSize: 250 }, ({ seiaSize }) => {
+            if (typeof seiaSize === "number")
+                applySize(img, seiaSize);
+        });
+        chrome.storage.onChanged.addListener((changes, area) => {
+            if (area === "local" && changes.seiaSize) {
+                const next = changes.seiaSize.newValue;
+                if (typeof next === "number")
+                    applySize(img, next);
+            }
+        });
+    }
     // Shared by both the Chrome relay path and the Firefox local-analysis path
     // Any db reading at/above the threshold counts as "singing".
     function handleDbLevel(db) {
@@ -192,6 +212,7 @@
         preloadFrames();
         loadThreshold(); // Pull the user's saved dB threshold and watch for changes
         loadVisibility(img); // Pull the user's saved show/hide preference and watch for changes
+        loadSize(img); // Pull the user's saved size preference and watch for changes
         setInterval(() => tick(img), CONFIG.frameMs); // start animation handling
         if (captureSupported) {
             chrome.runtime.onMessage.addListener(handleMessage); // Relay from offscreen.js

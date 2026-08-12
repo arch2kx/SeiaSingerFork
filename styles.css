@@ -188,3 +188,78 @@ header {
 .switch input:checked + .slider::before {
     transform: translateX(16px);
 }
+
+.size-row {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.slider-track-clip {
+    position: relative;
+    width: 120px;
+    height: 26px;
+    border-radius: 22px;
+    background-color: #ccc;
+    overflow: hidden;
+}
+
+.slider-fill {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    border-radius: 1rem;
+    width: 60.83%;
+    background-color: rgb(255, 199, 80);
+    pointer-events: none;
+}
+
+#seiaSizeSlider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    -webkit-appearance: none;
+    appearance: none;
+    width: 95%;
+    height: 22px;
+    display: flex;
+    align-items: center;
+    background: transparent;
+    cursor: pointer;
+    outline: none;
+}
+
+#seiaSizeSlider::-webkit-slider-runnable-track {
+    -webkit-appearance: none;
+    height: 26px;
+    background: transparent;
+}
+
+#seiaSizeSlider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 20px;
+    width: 20px;
+    margin-top: 3px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+}
+
+#seiaSizeSlider::-moz-range-track {
+    height: 26px;
+    background: transparent;
+}
+
+#seiaSizeSlider::-moz-range-thumb {
+    height: 20px;
+    width: 20px;
+    border: none;
+    border-radius: 50%;
+    background-color: #ffffff;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+}

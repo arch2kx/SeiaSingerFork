@@ -38,5 +38,37 @@
     seiaToggle?.addEventListener("change", () => {
         chrome.storage.local.set({ seiaEnabled: seiaToggle.checked });
     });
+    // The Seia size slider has 5 preset overlay widths. DEFAULT_SIZE_INDEX is the fallback.
+    const SEIA_SIZES = [130, 180, 250, 350, 450];
+    const DEFAULT_SIZE_INDEX = 2;
+    const DEFAULT_SIZE = SEIA_SIZES[DEFAULT_SIZE_INDEX] ?? 250;
+    const seiaSizeSlider = document.getElementById("seiaSizeSlider");
+    const seiaSizeFill = document.getElementById("seiaSizeFill");
+    const SLIDER_THUMB_PX = 20;
+    const SLIDER_FILL_GAP_PX = 3;
+    function updateSliderFill(slider, fill) {
+        const fraction = Number(slider.value) / (SEIA_SIZES.length - 1);
+        const trackWidth = slider.offsetWidth || 120;
+        const thumbRightEdgePx = SLIDER_THUMB_PX + fraction * (trackWidth - SLIDER_THUMB_PX);
+        const fillPx = Math.min(trackWidth, thumbRightEdgePx + SLIDER_FILL_GAP_PX);
+        fill.style.width = `${(fillPx / trackWidth) * 100}%`;
+    }
+    chrome.storage.local.get({ seiaSize: DEFAULT_SIZE }, ({ seiaSize }) => {
+        if (!seiaSizeSlider || !seiaSizeFill)
+            return;
+        const index = SEIA_SIZES.indexOf(seiaSize);
+        seiaSizeSlider.value = String(index === -1 ? DEFAULT_SIZE_INDEX : index);
+        updateSliderFill(seiaSizeSlider, seiaSizeFill);
+    });
+    seiaSizeSlider?.addEventListener("input", () => {
+        if (!seiaSizeFill)
+            return;
+        const index = Number(seiaSizeSlider.value);
+        const size = SEIA_SIZES[index] ?? SEIA_SIZES[DEFAULT_SIZE_INDEX];
+        if (size !== undefined) {
+            chrome.storage.local.set({ seiaSize: size });
+        }
+        updateSliderFill(seiaSizeSlider, seiaSizeFill);
+    });
 })();
 //# sourceMappingURL=popup.js.map
