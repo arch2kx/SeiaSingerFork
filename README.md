@@ -13,6 +13,8 @@ I like types so I'm writing it in TypeScript once again. lol.
 
 New Changes:
 - Firefox supports works lol
+- Toggle option for Seia so you don't have to disable the extension entirely.
+- Size options for Seia! (chiken wanted that feature for a while...)
 
 Original idea by chikenuwu:
 https://github.com/chikenuwu/SeiaSinger
