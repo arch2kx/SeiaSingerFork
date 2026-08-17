@@ -1,12 +1,12 @@
 {
   "name": "seiasingerfork",
-  "version": "1.0.2",
+  "version": "1.1.1",
   "main": "background.js",
   "scripts": {
     "build": "tsc",
     "watch": "tsc --watch",
     "lint": "web-ext lint",
-    "zip": "npm run build && web-ext build --overwrite-dest --artifacts-dir=."
+    "zip": "npm run build && web-ext build --overwrite-dest --artifacts-dir=web-ext-artifacts"
   },
   "keywords": [],
   "author": "",
