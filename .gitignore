@@ -1,19 +1,29 @@
-.DS_Store
 .idea
 *.log
 tmp/
 
-# web-ext
-web-ext-artifacts/
-*.zip
-*.xpi
-.web-extension-id
-
 *.tern-port
-node_modules/
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 *.tsbuildinfo
 .npm
 .eslintcache
+
+# Dependencies
+node_modules/
+
+# TypeScript Build Artifacts
+*.js
+*.js.map
+*.d.ts
+*.d.ts.map
+
+# Web Extension / System Clutter
+*.zip
+*.xpi
+.web-extension-id
+.web-ext/
+web-ext-artifacts/
+.DS_Store
+Thumbs.db
